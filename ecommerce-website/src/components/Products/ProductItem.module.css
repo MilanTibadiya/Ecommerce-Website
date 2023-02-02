@@ -1,0 +1,29 @@
+.container{
+    max-width: 100%;
+    justify-content: center;
+    background-color: antiquewhite;
+    margin: 50px 50px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+
+}
+
+.btnParent {
+    justify-content: space-between;
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4%;
+    background: #56CCF2;
+}
+.btn:hover {
+    color: #fff;
+}

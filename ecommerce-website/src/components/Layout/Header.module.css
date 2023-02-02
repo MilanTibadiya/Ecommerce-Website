@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    width: 100%;
+    background-color: rgb(156, 124, 124);
+    align-items: center;
+}
+
+.container {
+    height: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+ul {
+    display: flex;
+    margin-left: 100px;
+}
+ul li {
+    margin-left: 20px;
+    list-style: none;
+}
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: larger;
+    transition: 0.6 sec;
+}
+
+a:hover {
+    color: rgb(40, 54, 54);
+}
+
+.cart {
+    border: 1px solid white;
+    align-items: center;
+    color: #fff;
+    margin-right: 140px;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(128, 134, 132);
+}

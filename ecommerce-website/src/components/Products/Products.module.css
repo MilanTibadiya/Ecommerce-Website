@@ -1,0 +1,9 @@
+.section {
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* .maincontainer {
+    display: flex;
+} */
