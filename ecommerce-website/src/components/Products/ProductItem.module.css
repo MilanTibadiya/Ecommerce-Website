@@ -1,12 +1,17 @@
 .container{
-    max-width: 100%;
-    justify-content: center;
+    /* width: 10vw; */
+    /* justify-content: end;  */
     background-color: antiquewhite;
-    margin: 50px 50px;
+    margin: 50px ;
     padding: 20px;
     border-radius: 15px;
     border: 1px solid black;
+    flex-direction: column;
+    box-shadow: 10px 10px rgb(146, 134, 146);
+}
 
+.container h2 {
+    text-align: center;
 }
 
 .btnParent {

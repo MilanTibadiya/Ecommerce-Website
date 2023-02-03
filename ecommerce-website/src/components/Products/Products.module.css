@@ -3,6 +3,9 @@
     height: auto;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-left: 300px;
+    margin-right: 300px;
+    /* gap: 20px; */
 }
 /* .maincontainer {
     display: flex;
