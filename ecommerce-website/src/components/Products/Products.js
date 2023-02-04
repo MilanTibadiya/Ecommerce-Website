@@ -34,7 +34,7 @@ const productsArr = [
         <ProductItem
         id={item.id}
         key={item.id}
-        title={item.title}
+        title={item.title}z
         img={item.imageUrl}
         price={item.price}
         />

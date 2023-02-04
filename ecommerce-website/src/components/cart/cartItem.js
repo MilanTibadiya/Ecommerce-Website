@@ -16,7 +16,7 @@ const CartItem = (props) => {
                 </div>
 
                 <div className={classes.qty}>
-                    <span>Quantity: {props.quantity}</span>
+                    <span>Quantity: 1{props.quantity}</span>
                     <button>Remove</button>
                 </div>
             </div>

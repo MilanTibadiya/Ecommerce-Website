@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import Cart from "../cart/cart";
 import classes from './Header.module.css';
+import CartContext from "../../store/cartContext";
 
 const Header = () => {
-    const [show, setCart] = useState(true);
+    const cartct = useContext(CartContext);
+    let cartnum = +(cartct.item.length);
+    console.log(cartnum)
+
+    const [show, setCart] = useState(false);
 
     return (
         <header className={classes.header}>
@@ -16,8 +21,9 @@ const Header = () => {
                     <li><a href="#">About</a></li>
                 </ul>
                 </div>
-                <div>
-                <button onClick={()=> setCart(!show)} className={classes.cart}>Cart</button>
+                <div className={classes.cartsection}>
+                    <span className={classes.cartqty}> {cartnum}</span>
+                <button onClick={() => setCart(!show)} className={classes.cart}>Cart</button>
                 </div>
             </div>
            { show ? <div className={classes.toggle}>
