@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Outlet ,Link } from 'react-router-dom';
 
 import Cart from "../cart/cart";
 import classes from './Header.module.css';
@@ -12,13 +13,14 @@ const Header = () => {
     const [show, setCart] = useState(false);
 
     return (
+        <>
         <header className={classes.header}>
             <div className={classes.container}>
                 <div>
                 <ul className={classes.flex}>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Store</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/products">Store</Link></li>
+                    <li><Link to='/about'>About</Link></li>
                 </ul>
                 </div>
                 <div className={classes.cartsection}>
@@ -30,6 +32,8 @@ const Header = () => {
                 <Cart/>
             </div> : null}
         </header>
+        <Outlet/>
+        </>
     );
 };
 

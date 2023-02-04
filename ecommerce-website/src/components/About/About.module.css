@@ -1,0 +1,26 @@
+.about{
+    border: 2px solid rgb(230, 221, 221);
+    height: 600px;
+    margin: 0px 70px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.about-heading h1{
+    justify-content: center;
+    font-weight: 800;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(26, 119, 201);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.footer{
+    margin-top:100px;
+    text-align: center;
+    border: 1px solid #d47777;
+    color: rgb(49, 1, 1);
+}

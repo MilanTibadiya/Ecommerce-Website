@@ -3,9 +3,8 @@
     width: 100%;
     background-color: rgb(156, 124, 124);
     align-items: center;
-    /* position: fixed; */
-    margin-bottom: 50px;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .container {
