@@ -1,0 +1,37 @@
+.control{
+    margin: 1rem;
+    /* background-color: #fff; */
+  }
+  
+/* .form1 {
+    margin: 3rem 33rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: center;
+    color: black;
+  } */
+
+.control label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+.control input,
+.control textarea {
+    display: block;
+    width: 100%;
+    font: inherit;
+    padding: 0.2rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+  
+.control input:focus,
+.control textarea:focus {
+    outline: none;
+    border-color: #230052;
+  }
