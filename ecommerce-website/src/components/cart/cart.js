@@ -42,6 +42,7 @@ const Cart = () => {
           quantity={item.quantity}
        />)}
        </ul> 
+    //    console.log(cartctx + "    abcd")
     return (
         <React.Fragment>
             {cartElement}
