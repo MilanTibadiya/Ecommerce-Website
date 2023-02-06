@@ -2,7 +2,7 @@ import React, { useState ,useRef } from 'react';
 
 import classes from './AddMovie.module.css';
 
-function AddMovie() {
+function AddMovie(props) {
   const titleRef = useRef('');
   const openingTextRef = useRef('');
   const releaseDateRef = useRef('');
@@ -18,7 +18,9 @@ function AddMovie() {
       releaseDate: releaseDateRef.current.value,
     };
 
-    console.log(movie);
+    props.onAddMovie(movie);
+
+    // console.log(movie);
     // setTitle('');
   }
 
@@ -26,7 +28,7 @@ function AddMovie() {
     <form onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor='title'>Title</label>
-        <input type='text' id='title' value={title} ref={titleRef} />
+        <input type='text' id='title' ref={titleRef} />
       </div>
       <div className={classes.control}>
         <label htmlFor='opening-text'>Opening Text</label>
