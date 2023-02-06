@@ -9,8 +9,9 @@ const ProductItem = (props) => {
     
     const submitHandler = (event) => {
         event.preventDefault();
-        cartctx.item.push(props);
-        console.log("in cartCtX", cartctx)
+        cartctx.addItem(props);
+        // cartctx.item.push(props);
+        // console.log("in cartCtX", cartctx)
     };
 
     return (

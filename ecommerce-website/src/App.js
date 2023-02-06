@@ -5,8 +5,9 @@ import Header from "./components/Layout/Header";
 import Products from "./components/Products/Products";
 import CartProvider from "./store/cartProvider";
 
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
+import Home from "./components/Pages/Home/Home";
+import About from "./components/Pages/About/About";
+import ContactUs from './components/Pages/ContactUS/ContactUs';
 
 const router = createBrowserRouter( [ 
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter( [
     children: [
       { path: '/', element: <Home/> },
        { path: '/products', element: <Products/> },
-      { path: '/about', element: <About/> }
+      { path: '/about', element: <About/> },
+      { path: '/contact', element: <ContactUs/>},
     ],
   },
 ] );

@@ -30,21 +30,23 @@ import CartContext from "../../store/cartContext";
 const Cart = () => {
 
     const cartctx = useContext(CartContext);
-    
+    // console .log(' this is a cart',cartctx.item)
 
     const cartElement = <ul className={classes.ullist}>
         { cartctx.item.map((item) => 
        <CartItem 
+       id={item.id}
        key={item.id}
           title={item.title}
           price={item.price}
-          img={item.imageUrl}
+          img={item.img}
           quantity={item.quantity}
        />)}
        </ul> 
     //    console.log(cartctx + "    abcd")
     return (
         <React.Fragment>
+             <h4 className={classes.total}>Total Amount: $125 {cartctx.item.price}</h4>
             {cartElement}
         </React.Fragment>
     );

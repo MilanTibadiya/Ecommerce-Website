@@ -8,7 +8,7 @@ import CartContext from "../../store/cartContext";
 const Header = () => {
     const cartct = useContext(CartContext);
     let cartnum = +(cartct.item.length);
-    console.log(cartnum)
+    // console.log(' header', cartct )
 
     const [show, setCart] = useState(false);
 
@@ -21,6 +21,7 @@ const Header = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/products">Store</Link></li>
                     <li><Link to='/about'>About</Link></li>
+                    <li><Link to='/contact'>ContactUS</Link></li>
                 </ul>
                 </div>
                 <div className={classes.cartsection}>
