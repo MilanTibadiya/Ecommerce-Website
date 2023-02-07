@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Outlet ,Link } from 'react-router-dom';
+import { Outlet , NavLink } from 'react-router-dom';
 
 import Cart from "../cart/cart";
 import classes from './Header.module.css';
@@ -18,10 +18,10 @@ const Header = () => {
             <div className={classes.container}>
                 <div>
                 <ul className={classes.flex}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/products">Store</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><Link to='/contact'>ContactUS</Link></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/products">Store</NavLink></li>
+                    <li><NavLink to='/about'>About</NavLink></li>
+                    <li><NavLink to='/contact'>Contact Us</NavLink></li>
                 </ul>
                 </div>
                 <div className={classes.cartsection}>

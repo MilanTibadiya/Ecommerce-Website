@@ -1,0 +1,53 @@
+.contactHeading {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 12px;
+    margin-top: 0px;
+    font-size: 60px;
+    font-weight: 100;
+    /* box-shadow: 10px 7px 10px gray; */
+}
+
+.contactform {
+     display: flex;
+     flex-direction: column;
+     border: 2px solid rgb(250, 243, 243);
+     margin: 7% 35%;
+     padding: 20px;
+     height: 330px;
+     justify-content: space-around;
+     box-shadow: 2px 2px 17px 6px gray;
+     border-radius: 9px;
+}
+
+.contactField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.contactLable {
+    margin-left: 10px;
+}
+
+.contactInput {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 9px;
+}
+
+.contactSubmit {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 3px 160px 5px;
+    border: 1px solid rgb(99, 85, 85);
+    align-items: center;
+    color: #fff;
+    /* font-weight: 900; */
+    font-size: larger;
+    border-radius: 10px;
+    background-color: rgb(86,204,242);
+}
+.contactSubmit:hover {
+    background-color: rgb(12, 175, 230);
+}
