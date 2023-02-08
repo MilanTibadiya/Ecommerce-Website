@@ -20,40 +20,49 @@ const AuthForm = () => {
     const enteredPassword = passwordInputRef.current.value;
 
  setLoading(true);
- 
+ let url;
     if (isLogin) {
-
+      url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCq0D46LMMQdd83yquIDm-07jK4smD1MD4'
     } else {
-
-      fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCq0D46LMMQdd83yquIDm-07jK4smD1MD4'
-        , {
-          method: 'POST',
-          body: JSON.stringify({
-            email: enteredEmail,
-            password: enteredPassword,
-            returnSecureToken : true
-          }),
-          headers: {
-            'Content-Type' : 'application/json'
-          }
-        }).then(res => {
-    setLoading(false);
-
-          if (res.ok) {
-
-          } else {
-            res.json().then(data => {   // Json also return promises milan
-              let errorMessage = 'Authentication failed'
-              if(data && data.error && data.error.message) errorMessage = data.error.message
-            alert(errorMessage)
-            })
-          }
-        })
-        ;
+      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCq0D46LMMQdd83yquIDm-07jK4smD1MD4'
     }
+
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken : true
+      }),
+      headers: {
+        'Content-Type' : 'application/json'
+      }
+    }).then(res => {
+         setLoading(false);
+
+      if (res.ok) {
+        return res.json();
+      } else {
+        res.json().then(data => {   // Json also return promises milan
+          let errorMessage = 'Authentication failed'
+          if(data && data.error && data.error.message) {
+          errorMessage = data.error.message
+          }
+
+        throw new Error(errorMessage);
+        })
+      }
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      alert(err.message)
+    })
   }
 // console.log(loading)
-  return (
+  
+return (
     <section className={classes.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       <form onSubmit={submitHandler}>
