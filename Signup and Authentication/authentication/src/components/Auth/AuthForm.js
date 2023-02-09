@@ -58,8 +58,11 @@ const AuthForm = () => {
         })
       }
     })
-    .then((data) => {
-      authCtx.login(data.idToken);
+    .then((data) => {                             // here below data.expiresIn comming from firefox 1hrs its syntax of firefox fm,
+      const expirationTime = new Date(
+        new Date().getTime() + +data.expiresIn * 1000)
+        ; // convert to ms because its in not ms
+      authCtx.login(data.idToken, expirationTime.toISOString());     //to str i passed in authctx in date obj
       history.replace('/');
     })
     .catch((err) => {
