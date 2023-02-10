@@ -22,6 +22,7 @@ const Header = () => {
                     <li><NavLink to="/products">Store</NavLink></li>
                     <li><NavLink to='/about'>About</NavLink></li>
                     <li><NavLink to='/contact'>Contact Us</NavLink></li>
+                    <li><NavLink to='/login'>Login</NavLink></li>
                 </ul>
                 </div>
                 <div className={classes.cartsection}>
