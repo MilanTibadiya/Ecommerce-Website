@@ -28,7 +28,7 @@ function App() {
   return (
     <CartProvider>
       <RouterProvider router={router}/>
-     // {/* <Header/>
+      {/* <Header/>
       //<main>
        // <Products/>
       //</main> */}

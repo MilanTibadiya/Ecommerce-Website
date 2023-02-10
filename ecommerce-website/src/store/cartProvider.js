@@ -4,11 +4,11 @@ import CartContext from "./cartContext";
 
 const CartProvider = (props) => {
   const [Item, setCartItems] = useState([]);
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
 
 console.log(Item)
     const addItemToCartHandler = (item) => {
-      let x = Item.find(e => e.id == item.id)
+      let x = Item.find(e => e.id === item.id)
  
       var newitem;
       if(x){
