@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 
+import CartContext from "../../store/cartContext";
 import classes from './login.module.css';
 
 const Login = () => {
@@ -8,12 +9,16 @@ const Login = () => {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
+    const cartCt = useContext(CartContext);
+
     const submitHandler = (e) => {
         e.preventDefault()
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-     console.log(enteredEmail,enteredPassword)
+    //  console.log(enteredEmail,enteredPassword)
+
+    localStorage.setItem('userEmail', enteredEmail)
 
     fetch("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDTnveV-dKqhrKgMvNHcGtpIcy3EqFBPMc",
     {
@@ -42,8 +47,10 @@ const Login = () => {
    }
  })
  .then((data) => {                          
-  console.log(data.idToken);  
-  localStorage.setItem('token', data.idToken);
+  cartCt.setToken(data.idToken); 
+  cartCt.setItems();
+  // cartCt.isLoggedIn();
+  localStorage.setItem('idToken', data.idToken);
    history('/products');
  })
  .catch((err) => {

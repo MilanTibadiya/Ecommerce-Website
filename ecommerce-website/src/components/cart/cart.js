@@ -30,13 +30,12 @@ import CartContext from "../../store/cartContext";
 const Cart = () => {
 
     const cartctx = useContext(CartContext);
-    // console .log(' this is a cart',cartctx.totalAmount)
 
     const cartElement = <ul className={classes.ullist}>
-        { cartctx.item.map((item) => 
+        { cartctx.item.map((item) =>
        <CartItem 
-       id={item.id}
-       key={item.id}
+          id={item._id}
+          key={item._id}
           title={item.title}
           price={item.price}
           img={item.img}

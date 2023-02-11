@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Outlet , NavLink } from 'react-router-dom';
+import { Outlet , NavLink, useNavigate } from 'react-router-dom';
 
 import Cart from "../cart/cart";
 import classes from './Header.module.css';
@@ -9,6 +9,9 @@ const Header = () => {
     const cartct = useContext(CartContext);
     let cartnum = +(cartct.item.length);
     // console.log(' header', cartct )
+    const isLoggedIn = cartct.isLoggedIn;
+
+    const navigate= useNavigate()
 
     const [show, setCart] = useState(false);
 
@@ -19,10 +22,23 @@ const Header = () => {
                 <div>
                 <ul className={classes.flex}>
                     <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/products">Store</NavLink></li>
+                  {isLoggedIn && <li><NavLink to="/products">Store</NavLink></li>}
                     <li><NavLink to='/about'>About</NavLink></li>
                     <li><NavLink to='/contact'>Contact Us</NavLink></li>
-                    <li><NavLink to='/login'>Login</NavLink></li>
+                    {/* <li><NavLink to='/login'>Login</NavLink></li> */}
+                    <li> 
+                    {/* !cartct.token */}
+                       {!isLoggedIn ? <NavLink to="/login" id="link"> Login </NavLink>
+                                : <NavLink onClick={() => {  
+                                    localStorage.removeItem('idToken')
+                                    localStorage.removeItem("userEmail")
+                                    navigate('/login')
+                                    cartct.setCartItems([])
+                                    cartct.setToken(null)
+                                }
+                            }>Logout</NavLink> 
+                        }        
+                    </li>
                 </ul>
                 </div>
                 <div className={classes.cartsection}>
@@ -30,9 +46,9 @@ const Header = () => {
                 <button onClick={() => setCart(!show)} className={classes.cart}>Cart</button>
                 </div>
             </div>
-           { show ? <div className={classes.toggle}>
+           { isLoggedIn && (show ? <div className={classes.toggle}>
                 <Cart/>
-            </div> : null}
+            </div> : null)}
         </header>
         <Outlet/>
         </>

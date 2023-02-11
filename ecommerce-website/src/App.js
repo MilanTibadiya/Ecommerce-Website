@@ -11,17 +11,21 @@ import ContactUs from './components/Pages/ContactUS/ContactUs';
 import Product1 from "./components/Products/ProductsImages/Product_1";
 import Login from "./components/Auth/login";
 
+import PrivateRoute from "./components/Pages/PrivateRoute";
+// let token = localStorage.getItem('token');
+
 const router = createBrowserRouter( [ 
   {
     path: '/',
     element: <Header/>,
     children: [
       { path: '/', element: <Home/> },
-      { path: '/products', element: <Products/> },
+      { path: '/products', element: <PrivateRoute><Products/></PrivateRoute> }, 
+      { path: '/products/:id', element: <PrivateRoute><Product1/></PrivateRoute> },
       { path: '/about', element: <About/> },
       { path: '/contact', element: <ContactUs/>},
-      {path: '/products/:id', element: <Product1/>},
-      {path: '/login', element: <Login/>},
+      { path: '/login', element: <Login/>},
+      { path: '*', element:<Login/>}
     ],
   },
 ] );

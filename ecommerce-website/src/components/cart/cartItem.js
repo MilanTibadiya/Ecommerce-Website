@@ -4,12 +4,11 @@ import classes from "./cartItem.module.css";
 import CartContext from "../../store/cartContext";
 
 const CartItem = (props) => {
-    // console.log( "end last" ,props)
     const ctx = useContext(CartContext);
 
-   const  removeCartItem = (id) => { 
-        console.log("remove cart item", id)
-        ctx.removeItem(id);
+   const  removeCartItem = (_id) => { 
+        // console.log("remove cart item", _id)
+        ctx.removeItem(_id);
     }
 
     return (
