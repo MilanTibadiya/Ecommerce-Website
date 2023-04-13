@@ -1,0 +1,15 @@
+.footercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #56CCF2;
+  }
+
+  
+  .footerlogo {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 35px;
+  }

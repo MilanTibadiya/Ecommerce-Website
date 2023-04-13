@@ -15,9 +15,9 @@ const About = () => {
                 <p>Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of sorrows, hates no prosecutors will unfold in the enduring of which were born in it? Often leads smallest mistake some pain main responsibilities are to stand for the right builder of pleasure. </p>
                 <p>Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of sorrows, hates no prosecutors will unfold in the enduring of which were born in it? Often leads smallest mistake some pain main responsibilities are to stand for the right builder of pleasure. </p>
             </div>
-            <div className={classes.footer}>
+            {/* <div className={classes.footer}>
                 <p>footer section</p>
-            </div>
+            </div> */}
         </div>
        
         </section>
