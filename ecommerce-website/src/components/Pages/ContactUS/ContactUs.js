@@ -58,7 +58,9 @@ const ContactUS = () => {
             required
           />
         </div>
+        <div className={classes.contactSubmit1}>
         <button className={classes.contactSubmit}>Submit</button>
+        </div>
       </form>
     </React.Fragment>
   );

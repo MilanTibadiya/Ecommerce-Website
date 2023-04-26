@@ -39,7 +39,9 @@
 .contactSubmit {
     padding: 10px;
     border-radius: 5px;
-    margin: 3px 160px 5px;
+    /* margin: 3px 160px 5px; */
+    border: 9px solid red;
+    width: 5rem;
     border: 1px solid rgb(99, 85, 85);
     align-items: center;
     color: #fff;
@@ -50,4 +52,10 @@
 }
 .contactSubmit:hover {
     background-color: rgb(12, 175, 230);
+}
+
+.contactSubmit1 {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
 }
